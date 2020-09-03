@@ -2,6 +2,11 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = "."
 
+bot.on('ready', ()=>{
+    bot.user.setActivity(`${bot.guilds.size}`, {type: 'WATCHING'})
+    console.log('BOT Online.')
+})
+
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(!arg) return;
