@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = "NzUwOTY4OTY1NjEzODc5MzQ5.X1CQWQ.Khsl2ogbgTU3jBCd6MP6ZCUCwaY"
 const prefix = "."
-
-bot.login(token)
 
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
@@ -72,3 +69,5 @@ bot.on("message", (message) => {
         message.channel.send(embed)
     }
 });
+
+bot.login(process.env.token)
