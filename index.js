@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const prefix = "."
 
 bot.on('ready', ()=>{
-    bot.user.setActivity(`${bot.guilds.cache.size} server.`, {type: 'WATCHING'})
+    bot.user.setActivity(`${bot.guilds.cache.size} servers.`, {type: 'WATCHING'})
     console.log('BOT Online.')
 })
 
