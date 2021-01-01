@@ -9,6 +9,7 @@ bot.on('ready', ()=>{
 
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}training`)) {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "trainings") return message.author.send('Please use this command in the training channel.')
@@ -18,7 +19,6 @@ bot.on("message", (message) => {
         .setDescription(arg)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
-    if(message.content.includes(`${prefix}training`)) {
         message.channel.send('@everyone', embed)
     }
 });
