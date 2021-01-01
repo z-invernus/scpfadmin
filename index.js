@@ -25,7 +25,6 @@ bot.on("message", (message) => {
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}hentaishout`)) {
-    if(!arg) return;
     if(message.author.bot) return;
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
         message.channel.send("MM, TASTY HENTAI https://cdn.discordapp.com/attachments/793540101565186108/794294410280042506/OIP_34.jpeg")
