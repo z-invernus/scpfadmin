@@ -57,7 +57,7 @@ bot.on("message", (message) => {
         .setDescription(`*Come help us recruit more members!*\n \n${arg}`)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
-        message.channel.send('e', embed)
+        message.channel.send('@here', embed)
     }
 });
 bot.on("message", (message) => {
