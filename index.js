@@ -54,7 +54,7 @@ bot.on("message", (message) => {
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
         .setTitle("A recruitment session is being hosted!")
-        .setDescription('Come help us recruit more members!', \n arg)
+        .setDescription(arg)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
         message.channel.send('e', embed)
