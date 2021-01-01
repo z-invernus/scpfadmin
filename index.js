@@ -11,13 +11,14 @@ bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.channel.name !== "training") return message.author.send('Please use this command in the training channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
-        .setTitle("Training!")
+        .setTitle("A Training is being hosted!")
         .setDescription(arg)
-        .setColor("RANDOM")
+        .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
-    if(message.content.includes(`${prefix}trainingshout`)) {
+    if(message.content.includes(`${prefix}training`)) {
         message.channel.send(embed)
     }
 });
@@ -115,4 +116,4 @@ bot.on("message", (message) => {
 });
 
 
-bot.login(process.env.token);
+bot.login("NzUwOTY4OTY1NjEzODc5MzQ5.X1CQWQ.Khsl2ogbgTU3jBCd6MP6ZCUCwaY")
