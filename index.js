@@ -11,7 +11,7 @@ bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "training") return message.author.send('Please use this command in the training channel.')
+    if(message.channel.name !== "trainings") return message.author.send('Please use this command in the training channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
         .setTitle("A Training is being hosted!")
