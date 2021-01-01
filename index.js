@@ -19,6 +19,7 @@ bot.on("message", (message) => {
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
     if(message.content.includes(`${prefix}training`)) {
+        message.channel.send('@everyone')
         message.channel.send(embed)
     }
 });
