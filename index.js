@@ -46,6 +46,21 @@ bot.on("message", (message) => {
     }
 });
 bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}recruitment`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "events") return message.author.send('Please use this command in the events channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+    let embed = new Discord.MessageEmbed()
+        .setTitle("A recruitment session is being hosted!")
+        .setDescription('Come help us recruit more members!', \n arg)
+        .setColor("0x8b0000")
+        .setFooter(`Shouted by ${message.author.username}.`)
+        message.channel.send('e', embed)
+    }
+});
+bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}help`)) {
     if(message.author.bot) return;
     const embed = new Discord.MessageEmbed()
