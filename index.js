@@ -24,14 +24,6 @@ bot.on("message", (message) => {
 });
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}hentaishout`)) {
-    if(message.author.bot) return;
-    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
-        message.channel.send("MM, TASTY HENTAI https://cdn.discordapp.com/attachments/793540101565186108/794294410280042506/OIP_34.jpeg")
-    }
-});
-bot.on("message", (message) => {
-    var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}raid`)) {
     if(!arg) return;
     if(message.author.bot) return;
@@ -57,7 +49,7 @@ bot.on("message", (message) => {
         .setDescription(`*Come help us recruit more members!*\n \n${arg}`)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
-        message.channel.send('@here', embed)
+        message.channel.send('e', embed)
     }
 });
 bot.on("message", (message) => {
@@ -84,6 +76,20 @@ bot.on("message", (message) => {
         message.channel.send(embed)
     }
 });
-
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}raid test`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "raids") return message.author.send('Please use this command in the raids channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+    let embed = new Discord.MessageEmbed()
+        .setTitle("A Raid is being hosted!")
+        .setDescription(arg)
+        .setColor("0x8b0000")
+        .setFooter(`Shouted by ${message.author.username}.`)
+        message.channel.send(embed)
+    }
+});
 
 bot.login(process.env.token)
