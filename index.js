@@ -32,7 +32,7 @@ bot.on("message", (message) => {
     const isdchannel = bot.channels.cache.find(channel => channel.id === "822045769762340924");
     const mtfchannel = bot.channels.cache.find(channel => channel.id === "822231897241419846");
     const sdchannel = bot.channels.cache.find(channel => channel.id === "823639828775567420");
-    const echannel = bot.channels.cache.find(channel => channel.id === "822236570336755733");
+    const ecchannel = bot.channels.cache.find(channel => channel.id === "822236570336755733");
     const scdchannel = bot.channels.cache.find(channel => channel.id === "822246114250063912");
     const iachannel = bot.channels.cache.find(channel => channel.id === "822245494637985812");
    
