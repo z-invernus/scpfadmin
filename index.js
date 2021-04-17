@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const prefix = "."
 
 bot.on('ready', ()=>{
-    bot.user.setActivity(`${bot.guilds.cache.size} servers.`, {type: 'WATCHING'})
+    bot.user.setActivity(`SCP Foundation`, {type: 'WATCHING'})
     console.log('BOT Online.')
 })
 
@@ -13,6 +13,21 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the training channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Event Shout")
+        .setDescription(arg)
+        .setColor("0x8b0000")
+        .setFooter(`Shouted by ${message.author.username}.`)
+        message.channel.send('@here', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}event`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "event-announcements", "events", "dept-wide-events") return message.author.send('Please use this command in the training channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
         .setTitle("Event Shout")
