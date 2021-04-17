@@ -24,47 +24,44 @@ bot.on("message", (message) => {
 });
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}event`)) {
+    if(message.content.startsWith(`${prefix}globalannounce`)) {
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the training channel.')
+    if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
+    if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
+    const sdchannel = '823639828775567420'
+    const scdchannel = '822246114250063912'
+    const ecchannel = '822236570336755733'
+    const mtfchannel = '822231897241419846'
+    const isdchannel = '822045769762340924'
+    const iachannel = '822245494637985812'
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Foundation Wide Announcement")
+        .setDescription(arg)
+        .setColor("0xff4500")
+        .setFooter(`Announcement by ${message.author.username}.`)
+        message.channel.send('@everyone', embed)
+        message.sdchannel.send('@everyone', embed)
+        message.scdchannel.send('@everyone', embed)
+        message.ecchannel.send('@everyone', embed)
+        message.mtfchannel.send('@everyone', embed)
+        message.isdchannel.send('@everyone', embed)
+        message.iachannel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}tryout`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "department-recruitment") return message.author.send('Please use this command in the training channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
-        .setTitle("Event Shout")
+        .setTitle("Department Recruitment")
         .setDescription(arg)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
         message.channel.send('@here', embed)
-    }
-});
-bot.on("message", (message) => {
-    var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}raid`)) {
-    if(!arg) return;
-    if(message.author.bot) return;
-    if(message.channel.name !== "raids") return message.author.send('Please use this command in the raids channel.')
-    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
-    let embed = new Discord.MessageEmbed()
-        .setTitle("A Raid is being hosted!")
-        .setDescription(arg)
-        .setColor("0x8b0000")
-        .setFooter(`Shouted by ${message.author.username}.`)
-        message.channel.send('@everyone', embed)
-    }
-});
-bot.on("message", (message) => {
-    var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}recruitment`)) {
-    if(!arg) return;
-    if(message.author.bot) return;
-    if(message.channel.name !== "events") return message.author.send('Please use this command in the events channel.')
-    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
-    let embed = new Discord.MessageEmbed()
-        .setTitle("A recruitment session is being hosted!")
-        .setDescription(`*Come help us recruit more members!*\n \n${arg}`)
-        .setColor("0x8b0000")
-        .setFooter(`Shouted by ${message.author.username}.`)
-        message.channel.send('e', embed)
     }
 });
 bot.on("message", (message) => {
