@@ -28,7 +28,7 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
-    if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
+    if (!message.member.roles.cache.has('822233720768692254')) return;
    
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
