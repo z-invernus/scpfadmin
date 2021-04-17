@@ -9,17 +9,17 @@ bot.on('ready', ()=>{
 
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}training`)) {
+    if(message.content.startsWith(`${prefix}event`)) {
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "trainings") return message.author.send('Please use this command in the training channel.')
+    if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the training channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
-        .setTitle("A Training is being hosted!")
+        .setTitle("Event Shout")
         .setDescription(arg)
         .setColor("0x8b0000")
         .setFooter(`Shouted by ${message.author.username}.`)
-        message.channel.send('@everyone', embed)
+        message.channel.send('@here', embed)
     }
 });
 bot.on("message", (message) => {
@@ -78,16 +78,31 @@ bot.on("message", (message) => {
 });
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(`${prefix}raid test`)) {
+    if(message.content.startsWith(`${prefix}o5invites`)) {
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "raids") return message.author.send('Please use this command in the raids channel.')
+    if(message.channel.name !== "permanent-discord-invites") return message.author.send('Please use this command in the O5 council channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
-        .setTitle("A Raid is being hosted!")
+        .setTitle("Discord Invites")
         .setDescription(arg)
-        .setColor("0x8b0000")
-        .setFooter(`Shouted by ${message.author.username}.`)
+        .setColor("0xffa500")
+        .setFooter(`All documents listed above are strictly private and any leaking will lead to consequences`)
+        message.channel.send(embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}o5docs`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "o5-documents") return message.author.send('Please use this command in the O5 council channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+    let embed = new Discord.MessageEmbed()
+        .setTitle("O5 Council Documents")
+        .setDescription(arg)
+        .setColor("0xffa500")
+        .setFooter(`All documents listed above are strictly private and any leaking will lead to consequences`)
         message.channel.send(embed)
     }
 });
