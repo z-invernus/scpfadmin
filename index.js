@@ -29,6 +29,7 @@ bot.on("message", (message) => {
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
+    const guild = message
     const sdchannelID = '823639828775567420'
     const scdchannelID = '822246114250063912'
     const ecchannelID = '822236570336755733'
