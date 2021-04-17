@@ -37,12 +37,12 @@ bot.on("message", (message) => {
     const isdchannelID = '822045769762340924'
     const iachannelID = '822245494637985812'
     
-    let sdchannel = client.channels.get(sdchannelID)
-    let scdchannel = client.channels.get(scdchannelID)
-    let ecchannel = client.channels.get(ecchannelID)
-    let mtfchannel = client.channels.get(mtfchannelID)
-    let isdchannel = client.channels.get(isdchannelID)
-    let iachannel = client.channels.get(iachannelID)
+    let sdchannel = bot.channels.get(sdchannelID)
+    let scdchannel = bot.channels.get(scdchannelID)
+    let ecchannel = bot.channels.get(ecchannelID)
+    let mtfchannel = bot.channels.get(mtfchannelID)
+    let isdchannel = bot.channels.get(isdchannelID)
+    let iachannel = bot.channels.get(iachannelID)
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
         .setDescription(arg)
