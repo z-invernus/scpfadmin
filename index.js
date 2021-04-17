@@ -13,7 +13,7 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the training channel.')
-    if (!message.member.roles.cache.has('822233720768692254')) return;
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
         .setTitle("Event Shout")
         .setDescription(arg)
