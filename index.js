@@ -30,11 +30,11 @@ bot.on("message", (message) => {
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
     const isdchannel = bot.channels.cache.find(channel => channel.id === "822045769762340924");
-    const mtfchannel = bot.channels.cache.find(channel => channel.id === "822231897241419846);
-    const sdchannel = bot.channels.cache.find(channel => channel.id === "823639828775567420);
-    const echannel = bot.channels.cache.find(channel => channel.id === "822236570336755733);
-    const scdchannel = bot.channels.cache.find(channel => channel.id === "822246114250063912);
-    const iachannel = bot.channels.cache.find(channel => channel.id === "822245494637985812);
+    const mtfchannel = bot.channels.cache.find(channel => channel.id === "822231897241419846");
+    const sdchannel = bot.channels.cache.find(channel => channel.id === "823639828775567420");
+    const echannel = bot.channels.cache.find(channel => channel.id === "822236570336755733");
+    const scdchannel = bot.channels.cache.find(channel => channel.id === "822246114250063912");
+    const iachannel = bot.channels.cache.find(channel => channel.id === "822245494637985812");
    
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
