@@ -29,12 +29,19 @@ bot.on("message", (message) => {
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
-    const sdchannel = '823639828775567420'
-    const scdchannel = '822246114250063912'
-    const ecchannel = '822236570336755733'
-    const mtfchannel = '822231897241419846'
-    const isdchannel = '822045769762340924'
-    const iachannel = '822245494637985812'
+    const sdchannelID = '823639828775567420'
+    const scdchannelID = '822246114250063912'
+    const ecchannelID = '822236570336755733'
+    const mtfchannelID = '822231897241419846'
+    const isdchannelID = '822045769762340924'
+    const iachannelID = '822245494637985812'
+    
+    const sdchannel = guild.channels.cache.get(sdchannelID)
+    const scdchannel = guild.channels.cache.get(scdchannelID)
+    const ecchannel = guild.channels.cache.get(ecchannelID)
+    const mtfchannel = guild.channels.cache.get(mtfchannelID)
+    const isdchannel = guild.channels.cache.get(isdchannelID)
+    const iachannel = guild.channels.cache.get(iachannelID)
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
         .setDescription(arg)
