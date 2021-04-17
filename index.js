@@ -29,32 +29,13 @@ bot.on("message", (message) => {
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
-    const guild = message
-    const sdchannelID = '823639828775567420'
-    const scdchannelID = '822246114250063912'
-    const ecchannelID = '822236570336755733'
-    const mtfchannelID = '822231897241419846'
-    const isdchannelID = '822045769762340924'
-    const iachannelID = '822245494637985812'
-    
-    let sdchannel = bot.channels.get(sdchannelID)
-    let scdchannel = bot.channels.get(scdchannelID)
-    let ecchannel = bot.channels.get(ecchannelID)
-    let mtfchannel = bot.channels.get(mtfchannelID)
-    let isdchannel = bot.channels.get(isdchannelID)
-    let iachannel = bot.channels.get(iachannelID)
+   
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
         .setDescription(arg)
         .setColor("0xff4500")
         .setFooter(`Announcement by ${message.author.username}.`)
         message.channel.send('@everyone', embed)
-        message.sdchannel.send('@everyone', embed)
-        message.scdchannel.send('@everyone', embed)
-        message.ecchannel.send('@everyone', embed)
-        message.mtfchannel.send('@everyone', embed)
-        message.isdchannel.send('@everyone', embed)
-        message.iachannel.send('@everyone', embed)
     }
 });
 bot.on("message", (message) => {
