@@ -29,6 +29,7 @@ bot.on("message", (message) => {
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
+    const isdchannel = bot.channels.cache.find(channel => channel.id === "822045769762340924");
    
     let embed = new Discord.MessageEmbed()
         .setTitle("Foundation Wide Announcement")
@@ -36,6 +37,7 @@ bot.on("message", (message) => {
         .setColor("0xff4500")
         .setFooter(`Announcement by ${message.author.username}.`)
         message.channel.send('@everyone', embed)
+        isdchannel.send('@everyone', embed)
     }
 });
 bot.on("message", (message) => {
