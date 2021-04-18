@@ -40,7 +40,7 @@ bot.on("message", (message) => {
         .setTitle("Foundation Wide Announcement")
         .setDescription(arg)
         .setColor("0xff4500")
-        .setFooter(`Foundation Wide Announcement by ${message.author.name}`)
+        .setFooter(`Foundation Wide Announcement by ${message.author.username}`)
         message.channel.send('@everyone', embed)
         isdchannel.send('@everyone', embed)
         sdchannel.send('@everyone', embed)
@@ -61,7 +61,7 @@ bot.on("message", (message) => {
         .setTitle("Department Recruitment")
         .setDescription(arg)
         .setColor("0x8b0000")
-        .setFooter(`Shouted by ${message.author.name}`)
+        .setFooter(`Shouted by ${message.author.username}`)
         message.channel.send('@here', embed)
     }
 });
@@ -72,17 +72,17 @@ bot.on("message", (message) => {
         .setTitle('Showing command list.')
         .addField('N/A', 'Public commands are currently not available.')
         .setColor("RANDOM")
-        .setFooter(`Command ran by ${message.author.name}`)
+        .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
 });
 bot.on("message", (message) => {
-    if(message.content.startsWith(`${prefix}help`)) {
+    if(message.content.startsWith(`${prefix}status`)) {
     if(message.author.bot) return;
     const embed = new Discord.MessageEmbed()
         .addField('Current status:', 'Up and running.')
         .setColor("RANDOM")
-        .setFooter(`Command ran by ${message.author.name}`)
+        .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
 });
