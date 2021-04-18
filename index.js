@@ -72,7 +72,6 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return;
-
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.');
    
     let embed = new Discord.MessageEmbed()
