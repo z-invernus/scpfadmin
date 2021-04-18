@@ -195,9 +195,84 @@ bot.on("message", (message) => {
 bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}isdcmds`)) {
     if(message.author.bot) return;
+    if(message.guild.id !== "821894569922134056") return;
     const embed = new Discord.MessageEmbed()
         .setTitle('Showing ISD exclusive commands list')
-        .addField('.isdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822045769762340924>.')
+        .addField('.isdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822045769762340924>')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}eccmds`)) {
+    if(message.author.bot) return;
+    if(message.guild.id !== "821903969894400020") return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing EC exclusive commands list')
+        .addField('.ecannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in N/A.')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}iacmds`)) {
+    if(message.author.bot) return;
+    if(message.guild.id !== "821825590365519922") return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing IA exclusive commands list')
+        .addField('.iaannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822245494637985812>')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}mtfcmds`)) {
+    if(message.author.bot) return;
+    if(message.guild.id !== "821875789359480832") return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing MTF exclusive commands list')
+        .addField('.mtfannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822231844791517234>')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}scdcmds`)) {
+    if(message.author.bot) return;
+    if(message.guild.id !== "821996161208156170") return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing ScD exclusive commands list')
+        .addField('.scdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822246083635314729>')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}sdcmds`)) {
+    if(message.author.bot) return;
+    if(message.guild.id !== "821995762920718336") return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing SD exclusive commands list')
+        .addField('.sdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#823639793333174312>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
         .setColor("RANDOM")
