@@ -72,13 +72,8 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "announcements") return;
-    if(message.channel.name !== "executive-announcements") return;
-    if(message.channel.name !== "o5-announcements") return;
-    if(message.channel.name !== "foundation-announcements") return;
-    if(message.channel.name !== "department-announcements") return;
-    if(message.channel.name !== "event-announcements") return;
 
-    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.');
    
     let embed = new Discord.MessageEmbed()
         .setTitle("Announcement")
