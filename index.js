@@ -6,7 +6,7 @@ bot.on('ready', ()=>{
     bot.user.setActivity(`SCP Foundation`, {type: 'WATCHING'})
     console.log('BOT Online.')
 })
-
+//announcements
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}event`)) {
@@ -27,6 +27,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}globalannounce`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "announcements") return message.author.send('Please use this command in the announcements channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
     const isdchannel = bot.channels.cache.find(channel => channel.id === "822045769762340924");
@@ -55,6 +56,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}exeannounce`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "executive-announcements") return message.author.send('Please use this command in the executive announcements channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
    
@@ -66,13 +68,13 @@ bot.on("message", (message) => {
         message.channel.send('@everyone', embed)
     }
 });
+
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}announce`)) {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.guild.id !== "821789941708357632") return;
-    if(message.channel.name !== "announcements") return;
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.');
    
     let embed = new Discord.MessageEmbed()
@@ -83,11 +85,134 @@ bot.on("message", (message) => {
         message.channel.send('@everyone', embed)
     }
 });
+
+//department announcements
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}isdannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821894569922134056") return;
+    if(message.channel.name !== "announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Internal Security Department | Announcement")
+        .setDescription(arg)
+        .setColor("0x780000")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}sdannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821995762920718336") return;
+    if(message.channel.name !== "department-announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Security Department | Announcement")
+        .setDescription(arg)
+        .setColor("0x4e4d4f")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}ecannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821903969894400020") return;
+    if(message.channel.name !== "department-announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Ethics Committee | Announcement")
+        .setDescription(arg)
+        .setColor("0x179903")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}mtfannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821875789359480832") return;
+    if(message.channel.name !== "department-announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Mobile Task Force | Announcement")
+        .setDescription(arg)
+        .setColor("0x179903")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}scdannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821996161208156170") return;
+    if(message.channel.name !== "department-announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Scientific Department | Announcement")
+        .setDescription(arg)
+        .setColor("0x179903")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}iaannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.guild.id !== "821825590365519922") return;
+    if(message.channel.name !== "announcements") return message.author.send('Please use this command in the announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Intelligence Agency | Announcement")
+        .setDescription(arg)
+        .setColor("0x179903")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+
+//department commands
+bot.on("message", (message) => {
+    if(message.content.startsWith(`${prefix}isdcmds`)) {
+    if(message.author.bot) return;
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Showing ISD exclusive commands list')
+        .addField('.isdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822045769762340924>.')
+        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
+        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
+        .setColor("RANDOM")
+        .setFooter(`Command ran by ${message.author.username}`)
+        message.channel.send(embed)
+    }
+});
+
+//misc commands
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}tryout`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "department-recruitment") return message.author.send('Please use this command in the department recruitment channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
@@ -119,11 +244,14 @@ bot.on("message", (message) => {
         message.channel.send(embed)
     }
 });
+
+//o5
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}o5invites`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "permanent-discord-invites") return message.author.send('Please use this command in the O5 council channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return message.channel.send('Insufficient permission.');
     let embed = new Discord.MessageEmbed()
@@ -139,6 +267,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}o5docs`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "o5-documents") return message.author.send('Please use this command in the O5 council channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return message.channel.send('Insufficient permission.');
     let embed = new Discord.MessageEmbed()
