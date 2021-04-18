@@ -12,7 +12,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}event`)) {
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the training channel.')
+    if(message.channel.name !== "event-announcements") return message.author.send('Please use this command in the events channel.')
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
     let embed = new Discord.MessageEmbed()
         .setTitle("Event Shout")
@@ -27,7 +27,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}globalannounce`)) {
     if(!arg) return;
     if(message.author.bot) return;
-    if(message.channel.name !== "announcements") return message.author.send('Please use this command in the raids channel.')
+    if(message.channel.name !== "announcements") return message.author.send('Please use this command in the announcements channel.')
     if (!message.member.hasPermission(["ADMINISTRATOR"])) return;
     const isdchannel = bot.channels.cache.find(channel => channel.id === "822045769762340924");
     const mtfchannel = bot.channels.cache.find(channel => channel.id === "822231897241419846");
