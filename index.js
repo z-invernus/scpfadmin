@@ -52,6 +52,44 @@ bot.on("message", (message) => {
 });
 bot.on("message", (message) => {
     var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}exeannounce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "executive-announcements") return message.author.send('Please use this command in the executive announcements channel.')
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Executive Announcement")
+        .setDescription(arg)
+        .setColor("0xff4500")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
+    if(message.content.startsWith(`${prefix}announce`)) {
+    if(!arg) return;
+    if(message.author.bot) return;
+    if(message.channel.name !== "announcements") return;
+    if(message.channel.name !== "executive-announcements") return;
+    if(message.channel.name !== "o5-announcements") return;
+    if(message.channel.name !== "foundation-announcements") return;
+    if(message.channel.name !== "department-announcements") return
+    if(message.channel.name !== "event-announcements") return
+
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+   
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Announcement")
+        .setDescription(arg)
+        .setColor("0xff4500")
+        .setFooter(`Announcement by ${message.author.username}`)
+        message.channel.send('@everyone', embed)
+    }
+});
+bot.on("message", (message) => {
+    var arg = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(`${prefix}tryout`)) {
     if(!arg) return;
     if(message.author.bot) return;
