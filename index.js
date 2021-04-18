@@ -71,6 +71,7 @@ bot.on("message", (message) => {
     if(message.content.startsWith(`${prefix}announce`)) {
     if(!arg) return;
     if(message.author.bot) return;
+    if(message.guild.id !== "821789941708357632") return;
     if(message.channel.name !== "announcements") return;
     if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.');
    
