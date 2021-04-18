@@ -201,7 +201,7 @@ bot.on("message", (message) => {
         .addField('.isdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822045769762340924>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0x780000")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
@@ -216,7 +216,7 @@ bot.on("message", (message) => {
         .addField('.ecannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in N/A.')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0x179903")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
@@ -231,7 +231,7 @@ bot.on("message", (message) => {
         .addField('.iaannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822245494637985812>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0x0d0d0d")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
@@ -246,7 +246,7 @@ bot.on("message", (message) => {
         .addField('.mtfannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822231844791517234>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0xba6b04")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
@@ -261,7 +261,7 @@ bot.on("message", (message) => {
         .addField('.scdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#822246083635314729>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0x03a2ad")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
@@ -275,7 +275,7 @@ bot.on("message", (message) => {
         .addField('.sdannounce', 'Announcement commands, available to any rank with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in <#823639793333174312>')
         .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
         .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("RANDOM")
+        .setColor("0x4e4d4f")
         .setFooter(`Command ran by ${message.author.username}`)
         message.channel.send(embed)
     }
