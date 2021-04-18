@@ -56,7 +56,7 @@ bot.on("message", (message) => {
     if(!arg) return;
     if(message.author.bot) return;
     if(message.channel.name !== "executive-announcements") return message.author.send('Please use this command in the executive announcements channel.')
-    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return;
+    if (!message.member.hasPermission(["MENTION_EVERYONE"])) return message.channel.send('Insufficient permissions.')
    
     let embed = new Discord.MessageEmbed()
         .setTitle("Executive Announcement")
