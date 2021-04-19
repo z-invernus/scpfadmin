@@ -359,7 +359,6 @@ bot.on("message", (message) => {
 //ethics committee commands
 bot.on("message", (message) => {
     var bluser = message.content.split(" ").slice(1).join("/");
-    var arg = message.content.split("/").slice(2).join(" ");
     if(message.content.startsWith(`${prefix}blacklist-ec`)) {
     if(message.author.bot) return;
     if(!arg) return;
@@ -369,7 +368,6 @@ bot.on("message", (message) => {
         .setTitle('New Blacklisted User')
         .addField(`Blacklisted by`, message.author.username)
         .addField(`Blacklisted user`, bluser)
-        .addField(`Reason for blacklist`, arg)
         .setColor("0x000000")
         .setFooter(`If any improper blacklisting is spotted, blacklisting user will be punished.`)
         blchannel.send(embed)
