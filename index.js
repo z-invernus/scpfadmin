@@ -358,9 +358,8 @@ bot.on("message", (message) => {
 
 //ethics committee commands
 bot.on("message", (message) => {
-    var blinguser = message.content.split(" ").slice(1).join(" ");
-    var bluser = message.content.split(" ").slice(2).join(" ");
-    var arg = message.content.split(" ").slice(3).join(" ");
+    var bluser = message.content.split(" ").slice(1).join(" ");
+    var arg = message.content.split("/").slice(2).join("/");
     if(message.content.startsWith(`${prefix}blacklist-ec`)) {
     if(message.author.bot) return;
     if(!arg) return;
@@ -368,7 +367,7 @@ bot.on("message", (message) => {
     const blchannel = bot.channels.cache.find(channel => channel.id === "833672848206856233");
     const embed = new Discord.MessageEmbed()
         .setTitle('New Blacklisted User')
-        .addField(`Blacklisted by`, blinguser)
+        .addField(`Blacklisted by`, message.author.username)
         .addField(`Blacklisted user`, bluser)
         .addField(`Reason for blacklist`, arg)
         .setColor("0x000000")
