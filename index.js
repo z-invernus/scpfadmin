@@ -150,7 +150,7 @@ bot.on("message", (message) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Mobile Task Force | Announcement")
         .setDescription(arg)
-        .setColor("0x179903")
+        .setColor("0xba6b04")
         .setFooter(`Announcement by ${message.author.username}`)
         message.channel.send('@everyone', embed)
     }
@@ -167,7 +167,7 @@ bot.on("message", (message) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Scientific Department | Announcement")
         .setDescription(arg)
-        .setColor("0x179903")
+        .setColor("0x03a2ad")
         .setFooter(`Announcement by ${message.author.username}`)
         message.channel.send('@everyone', embed)
     }
@@ -186,7 +186,7 @@ bot.on("message", (message) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Intelligence Agency | Announcement")
         .setDescription(arg)
-        .setColor(`0x${color}`)
+        .setColor("0x0d0d0d")
         .setFooter(`Announcement by ${message.author.username}`)
         message.channel.send('@everyone', embed)
     }
@@ -358,17 +358,23 @@ bot.on("message", (message) => {
 
 //ethics committee commands
 bot.on("message", (message) => {
+    var blinguser = message.content.split(" ").slice(1).join(" ");
+    var bluser = message.content.split(" ").slice(2).join(" ");
+    var arg = message.content.split(" ").slice(3).join(" ");
     if(message.content.startsWith(`${prefix}blacklist-ec`)) {
     if(message.author.bot) return;
+    if(!arg) return;
     if(message.guild.id !== "821903969894400020") return;
+    const blchannel = bot.channels.cache.find(channel => channel.id === "833672848206856233");
     const embed = new Discord.MessageEmbed()
-        .setTitle('Blacklist Log')
-        .addField('')
-        .addField('.event', 'Global command issued to all department discords. Events channel **must** be named "event-announcements" for proper functioning. Available to anyone with **MENTION_EVERYONE** and **SEND_MESSAGE** perms in the events channel.')
-        .addField('.status', 'Basic command to show the bot\'s status, any rank may run this command.')
-        .setColor("0x780000")
-        .setFooter(`Command ran by ${message.author.username}`)
-        message.channel.send(embed)
+        .setTitle('New Blacklisted User')
+        .addField(`Blacklisted by`, blinguser)
+        .addField(`Blacklisted user`, bluser)
+        .addField(`Reason for blacklist`, arg)
+        .setColor("0x000000")
+        .setFooter(`If any improper blacklisting is spotted, blacklisting user will be punished.`)
+        blchannel.send(embed)
+        message.author.send(`Successfully blacklisted **${bluser}**.`)
     }
 });
 
