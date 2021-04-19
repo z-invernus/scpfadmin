@@ -358,8 +358,8 @@ bot.on("message", (message) => {
 
 //ethics committee commands
 bot.on("message", (message) => {
-    var bluser = message.content.split(" ").slice(1).join(" ");
-    var arg = message.content.split("/").slice(2).join("/");
+    var bluser = message.content.split(" ").slice(1).join("/");
+    var arg = message.content.split("/").slice(2).join(" ");
     if(message.content.startsWith(`${prefix}blacklist-ec`)) {
     if(message.author.bot) return;
     if(!arg) return;
